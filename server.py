@@ -1,9 +1,10 @@
 from flask import Flask
 from flask import session, redirect, url_for, render_template, Response, request
 import json
+import oc
 
 app = Flask(__name__, static_url_path="/portal/static")
-FLASK_SESSION_KEY = "CHANGEME"
+FLASK_SESSION_KEY = os.environ.get('flask_session_key')
 
 app.config.update(
     SECRET_KEY=FLASK_SESSION_KEY
