@@ -7,7 +7,7 @@ COPY . /app
 
 RUN pip3 --no-cache-dir install -r requirements.txt
 
-EXPOSE 5000
+EXPOSE 6001
 
 ENTRYPOINT ["python3"]
 CMD ["server.py"]
