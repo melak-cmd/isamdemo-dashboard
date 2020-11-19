@@ -215,12 +215,13 @@ window.actionEvents = {
    }
 
    $("#new-app-btn").click(function(e){
+       alert($("#app-name").val());
 	var appname = $("#app-name").val();
 	var redirecturl = $("#redirect-url").val();
 	var data = {client_name: appname, redirect_uris: redirecturl.split('\n')}
     var url = urls["API_CLIENTS_REGISTER"]["url"].format({"definition": "AppsRegister"});    
     var headers = {"Accept": "application/json","Content-type": "application/json"};
-    alert (url)
+    
 	api_call(urls["API_CLIENTS_REGISTER"]["method"], url, function(msg){
 		console.log(msg);
 		$('#new-app').trigger("reset");
