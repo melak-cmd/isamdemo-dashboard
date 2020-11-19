@@ -7,7 +7,7 @@
           <br/>
           <br/><br/>
 
-          <div >
+          <div class="jumbotron">
                 <div class="container">
                         <h3>Authorization Grant</h3>
     <table id="grants_table" class="table table-hover">
@@ -20,11 +20,11 @@
             </tr>
         </thead>
     </table>
-  <button onclick="javascript:init_grant_table(true);">Refresh</button>
+  <button class="btn btn-warning btn-sm" onclick="javascript:init_grant_table(true);">Refresh</button>
                 </div>
           </div>
 
-          <div >
+          <div class="jumbotron">
                 <div class="container">
                         <h3>Authenticators</h3>
     <table id="authenticators-table" class="table table-hover">
@@ -40,8 +40,8 @@
             </tr>
         </thead>
     </table>
-  <button data-toggle="modal" data-target="#modal-new-auth" >New</button> 
-  <button onclick="javascript:init_authenticators_table(true);">Refresh</button>
+  <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-new-auth" >New</button> 
+  <button class="btn btn-warning btn-sm" onclick="javascript:init_authenticators_table(true);">Refresh</button>
                 </div>
           </div>
 

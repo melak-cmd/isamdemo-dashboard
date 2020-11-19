@@ -86,7 +86,7 @@ window.actionEvents = {
                     init();
             },
             error: function() {
-                alert("failure > load_urls");
+                alert("failure");
             }
         });
     }
@@ -98,7 +98,7 @@ window.actionEvents = {
             url: url,
             success: success,
             error: function() {
-                alert("failure > api_call" + url);
+                alert("failure");
             }
         };
 	if(data!= null){
@@ -214,18 +214,12 @@ window.actionEvents = {
             });
    }
 
-   $("#new-app-btn").click(function(e){  
-       
+   $("#new-app-btn").click(function(e){
 	var appname = $("#app-name").val();
-    console.log(appname); 
-
 	var redirecturl = $("#redirect-url").val();
-    console.log(redirecturl); 
-    
-    var data = {client_name: appname, redirect_uris: redirecturl.split('\n')}
-    var url = urls["API_CLIENTS_REGISTER"]["url"].format({"definition": "AppsRegister"});    
-    var headers = {"Accept": "application/json","Content-type": "application/json"};
-    
+	var data = {client_name: appname, redirect_uris: redirecturl.split('\n')}
+	var url = urls["API_CLIENTS_REGISTER"]["url"].format({"definition": "AppsRegister"});
+	var headers = {"Accept": "application/json","Content-type": "application/json"};
 	api_call(urls["API_CLIENTS_REGISTER"]["method"], url, function(msg){
 		console.log(msg);
 		$('#new-app').trigger("reset");
