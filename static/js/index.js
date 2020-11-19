@@ -86,7 +86,7 @@ window.actionEvents = {
                     init();
             },
             error: function() {
-                alert("failure");
+                alert("failure > load_urls");
             }
         });
     }
@@ -98,7 +98,7 @@ window.actionEvents = {
             url: url,
             success: success,
             error: function() {
-                alert("failure");
+                alert("failure > api_call");
             }
         };
 	if(data!= null){
