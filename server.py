@@ -6,29 +6,30 @@ import os
 app = Flask(__name__, static_url_path="/portal/static")
 # FLASK_SESSION_KEY = "CHANGEME"
 FLASK_SESSION_KEY = os.environ.get('flask_session_key')
+WRP_URL = os.environ.get('WRP_URL')
 
 app.config.update(
     SECRET_KEY=FLASK_SESSION_KEY
 )
 
 URLS ={
-   "API_GRANT_LIST": {"url": "/mga/sps/mga/user/mgmt/grant" 		, "method": "GET"},
-   "API_GRANT_DETAIL": {"url": "/mga/sps/mga/user/mgmt/grant/{id}"	, "method": "GET"},
-   "API_GRANT_DELETE": {"url": "/mga/sps/mga/user/mgmt/grant/{id}"	, "method": "DELETE"},
-   "API_GRANT_UPDATE": {"url": "/mga/sps/mga/user/mgmt/grant/{id}"	, "method": "PUT"},
-   "API_AUTHENTICATORS_LIST": {"url": "/mga/sps/mmfa/user/mgmt/authenticators" , "method": "GET"},
+   "API_GRANT_LIST": {WRP_URL: "/mga/sps/mga/user/mgmt/grant" 		, "method": "GET"},
+   "API_GRANT_DETAIL": {WRP_URL: "/mga/sps/mga/user/mgmt/grant/{id}"	, "method": "GET"},
+   "API_GRANT_DELETE": {WRP_URL: "/mga/sps/mga/user/mgmt/grant/{id}"	, "method": "DELETE"},
+   "API_GRANT_UPDATE": {WRP_URL: "/mga/sps/mga/user/mgmt/grant/{id}"	, "method": "PUT"},
+   "API_AUTHENTICATORS_LIST": {WRP_URL: "/mga/sps/mmfa/user/mgmt/authenticators" , "method": "GET"},
    "API_AUTHENTICATORS_AUTHORIZE": 
-       {"url": "/mga/sps/oauth/oauth20/authorize?client_id={client}&response_type=code&scope=mmfaAuthn" 
+       {WRP_URL: "/mga/sps/oauth/oauth20/authorize?client_id={client}&response_type=code&scope=mmfaAuthn" 
          , "method": "GET"},
-   "API_AUTHENTICATOR_JSON": {"url": "/mga/sps/mmfa/user/mgmt/qr_code/json?code={code}&client_id={client}", "method": "GET"},
-   "API_AUTHENTICATOR_QR":	{"url": "/mga/sps/mmfa/user/mgmt/qr_code?code={code}&client_id={client}", "method": "GET"},
-   "API_AUTHENTICATOR_DETAIL": {"url":"/mga/sps/mmfa/user/mgmt/authenticators/{id}","method":"GET"},
-   "API_AUTHENTICATOR_DELETE": {"url":"/mga/sps/mmfa/user/mgmt/authenticators/{id}","method":"DELETE"},
-   "API_AUTH_MECHANISM_DELETE": {"url":"/mga/sps/mmfa/user/mgmt/auth_methods/{id}","method":"DELETE"},
-   "API_CLIENTS_LIST": {"url": "/mga/sps/mga/user/mgmt/clients" 		, "method": "GET"},
-   "API_CLIENTS_DELETE": {"url": "/mga/sps/oauth/oauth20/register/{definition}?client_id={id}" 		, "method": "DELETE"},
-   "API_CLIENTS_DETAIL": {"url": "/mga/sps/oauth/oauth20/register/{definition}?client_id={id}" 		, "method": "GET"},
-   "API_CLIENTS_REGISTER": {"url": "/mga/sps/oauth/oauth20/register/{definition}" 		, "method": "POST"}
+   "API_AUTHENTICATOR_JSON": {WRP_URL: "/mga/sps/mmfa/user/mgmt/qr_code/json?code={code}&client_id={client}", "method": "GET"},
+   "API_AUTHENTICATOR_QR":	{WRP_URL: "/mga/sps/mmfa/user/mgmt/qr_code?code={code}&client_id={client}", "method": "GET"},
+   "API_AUTHENTICATOR_DETAIL": {WRP_URL:"/mga/sps/mmfa/user/mgmt/authenticators/{id}","method":"GET"},
+   "API_AUTHENTICATOR_DELETE": {WRP_URL:"/mga/sps/mmfa/user/mgmt/authenticators/{id}","method":"DELETE"},
+   "API_AUTH_MECHANISM_DELETE": {WRP_URL:"/mga/sps/mmfa/user/mgmt/auth_methods/{id}","method":"DELETE"},
+   "API_CLIENTS_LIST": {WRP_URL: "/mga/sps/mga/user/mgmt/clients" 		, "method": "GET"},
+   "API_CLIENTS_DELETE": {WRP_URL: "/mga/sps/oauth/oauth20/register/{definition}?client_id={id}" 		, "method": "DELETE"},
+   "API_CLIENTS_DETAIL": {WRP_URL: "/mga/sps/oauth/oauth20/register/{definition}?client_id={id}" 		, "method": "GET"},
+   "API_CLIENTS_REGISTER": {WRP_URL: "/mga/sps/oauth/oauth20/register/{definition}" 		, "method": "POST"}
  }
 
 
