@@ -98,7 +98,7 @@ window.actionEvents = {
             url: url,
             success: success,
             error: function() {
-                alert("failure > api_call");
+                alert("failure > api_call" + url);
             }
         };
 	if(data!= null){
